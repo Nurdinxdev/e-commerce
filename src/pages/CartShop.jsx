@@ -2,19 +2,21 @@ import React from "react";
 import { useCartContext } from "../Context";
 
 const CartShop = () => {
-  const { cart, addToCart } = useCartContext();
+  const { cart, addToCart, sendToWhatsapp } = useCartContext();
 
-  const totalPrice = cart?.reduce(
+  const totalPrice = cart.reduce(
     (total, item) => total + item.price * item.quantity,
     0
   );
+
   const removeFromCart = (product) => {
     addToCart(product, -1);
   };
+
   return (
     <div className='max-w-4xl mx-auto px-4 py-8'>
       <h2 className='text-3xl font-bold mb-6'>Shopping Cart</h2>
-      <div className=' flex flex-col gap-6'>
+      <div className='flex flex-col gap-6'>
         {cart.length > 0 ? (
           cart.map((product, index) => (
             <div
@@ -67,7 +69,12 @@ const CartShop = () => {
       </div>
       {cart.length > 0 && (
         <div className='total-price flex justify-start items-center gap-4 mt-6'>
-          <button className='btn btn-primary'>Check Out</button>
+          <button
+            className='btn btn-primary'
+            onClick={() => sendToWhatsapp(cart)}
+          >
+            Check Out
+          </button>
           <p className='text-2xl font-bold'>Total: ${totalPrice.toFixed(2)}</p>
         </div>
       )}

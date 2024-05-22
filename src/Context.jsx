@@ -38,10 +38,31 @@ export const CartContextProvider = ({ children }) => {
     if (notif) toast.success("Added to cart");
   };
 
+  const sendToWhatsapp = (data) => {
+    const message = data
+      .filter((item) => item.quantity > 0)
+      .map((item) => `${item.quantity} x ${item.title} - $${item.price}`)
+      .join("\n");
+    const total = data.reduce(
+      (sum, item) => sum + item.price * item.quantity,
+      0
+    );
+    const finalMessage = `I want to buy:\n${message}\n\nTotal: $${total.toFixed(
+      2
+    )}`;
+    const url = `https://wa.me/+0123456789?text=${encodeURIComponent(
+      finalMessage
+    )}`;
+    console.log(finalMessage);
+    console.log(url);
+    // window.open(url, "_blank");
+  };
+
   const data = {
     cart,
     setCart,
     addToCart,
+    sendToWhatsapp,
   };
   return <CartContext.Provider value={data}>{children}</CartContext.Provider>;
 };
