@@ -1,9 +1,9 @@
-import imgPizza1 from "../assets/asset-3.jpeg";
-import imgPizza2 from "../assets/asset-4.jpeg";
-import imgPizza3 from "../assets/asset-5.jpeg";
-import imgBurger1 from "../assets/asset-7.jpeg";
-import imgBurger2 from "../assets/asset-8.jpeg";
-import imgBurger3 from "../assets/asset-9.jpeg";
+import imgPizza1 from "/images/asset-3.jpeg";
+import imgPizza2 from "/images/asset-4.jpeg";
+import imgPizza3 from "/images/asset-5.jpeg";
+import imgBurger1 from "/images/asset-7.jpeg";
+import imgBurger2 from "/images/asset-8.jpeg";
+import imgBurger3 from "/images/asset-9.jpeg";
 
 const data = [
   [

@@ -1,5 +1,5 @@
 import React from "react";
-import img from "../assets/asset-2.jpeg";
+import img from "/images/asset-2.jpeg";
 
 const Hero = () => {
   const scrollToProducts = () => {
