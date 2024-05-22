@@ -3,7 +3,7 @@ import React from "react";
 const About = () => {
   return (
     <div className='flex justify-center py-24' id='about-section'>
-      <div className=' w-[80%] px-8 '>
+      <div className=' w-[90%] px-4 '>
         <h2 className='text-3xl font-bold'>About Us</h2>
         <br />
         <p className='text-lg'>
