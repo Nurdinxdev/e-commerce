@@ -1,20 +1,14 @@
-import About from "./components/About";
-import Footer from "./components/Footer";
-import Hero from "./components/Hero";
-import Navbar from "./components/Navbar";
-import Products from "./components/Products";
+import { Route, Routes } from "react-router-dom";
+import Layout from "./components/Layout";
+import Home from "./pages/Home";
 
 const App = () => {
   return (
-    <>
-      <div className='max-w-screen min-h-screen'>
-        <Navbar />
-        <Hero />
-        <Products />
-        <About />
-        <Footer />
-      </div>
-    </>
+    <Routes>
+      <Route path='/' element={<Layout />}>
+        <Route index element={<Home />} />
+      </Route>
+    </Routes>
   );
 };
 

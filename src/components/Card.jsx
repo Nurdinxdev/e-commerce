@@ -18,6 +18,12 @@ const Card = ({ src, title, description, price }) => {
         <p className='sm:block hidden'>{description}</p>
         <div className='card-actions justify-end'>
           <button
+            className='btn btn-neutral md:btn-md btn-sm'
+            onClick={() => sendToWhatsapp()}
+          >
+            Add to Cart
+          </button>
+          <button
             className='btn btn-primary md:btn-md btn-sm'
             onClick={() => sendToWhatsapp()}
           >
