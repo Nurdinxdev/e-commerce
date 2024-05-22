@@ -2,6 +2,18 @@
 
 Welcome to the XSTER Pizza E-Commerce project! This project is a fully responsive, modern web application built with Vite and React.js, designed to provide a seamless online pizza ordering experience. It integrates with WhatsApp API for easy and secure payments.
 
+## ScreenShots
+
+### Home page
+
+![Home - hero section](./screenshots/home-hero.png)
+![Home - Products section 1](./screenshots/home-products1.png)
+![Home - Products section 2](./screenshots/home-products2.png)
+
+### Cart page
+
+![Cart page](./screenshots/cart.png)
+
 ## Features 🚀
 
 - **Dynamic Product Listings:** Browse through a variety of delicious pizzas and burgers with detailed descriptions and prices.

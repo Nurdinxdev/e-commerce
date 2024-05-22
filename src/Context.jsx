@@ -20,16 +20,16 @@ export const CartContextProvider = ({ children }) => {
 
       let updatedCart;
       if (existingProductIndex !== -1) {
-        // Product already in cart, increase quantity
         updatedCart = cart.map((item, index) =>
           index === existingProductIndex
             ? { ...item, quantity: item.quantity + number }
             : item
         );
       } else {
-        // Product not in cart, add new product with quantity 1
         updatedCart = [...cart, { ...data, quantity: number }];
       }
+      // filter all updatedCart with 0 quantity
+      updatedCart = updatedCart.filter((item) => item.quantity > 0);
       setCart(updatedCart);
       localStorage.setItem("cart", JSON.stringify(updatedCart));
     } else {
