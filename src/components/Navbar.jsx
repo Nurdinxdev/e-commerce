@@ -1,6 +1,7 @@
 import React from "react";
 import { IoCartSharp } from "react-icons/io5";
 import { useCartContext } from "../Context";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const { cart } = useCartContext();
@@ -18,37 +19,41 @@ const Navbar = () => {
     }
   };
 
+  const totalLength = cart?.reduce((total, item) => total + item.quantity, 0);
+
   return (
     <nav className='max-w-full px-8 py-2 flex flex-row justify-between items-center'>
-      <h1 className='font-bold text-2xl cursor-pointer'>XSTER</h1>
+      <h1 className='font-bold text-2xl cursor-pointer'>
+        <Link to={"/"}>XSTER </Link>
+      </h1>
       <ul className='flex flex-row gap-4 items-center'>
         <li className='relative'>
-          <a className='text-2xl cursor-pointer' href='#'>
+          <Link className='text-2xl cursor-pointer' to='/cart'>
             <IoCartSharp />
-          </a>
+          </Link>
           {cart?.length > 0 && (
             <span className='absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full px-1'>
-              {cart.length}
+              {totalLength}
             </span>
           )}
         </li>
         <li>
-          <a
+          <Link
             className='text-lg cursor-pointer'
             onClick={() => scrollToProducts()}
             href='#product'
           >
             Product
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             className='text-lg cursor-pointer'
             onClick={() => scrollToAbout()}
             href='#about'
           >
             About
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>
