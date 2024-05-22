@@ -53,9 +53,7 @@ export const CartContextProvider = ({ children }) => {
     const url = `https://wa.me/+0123456789?text=${encodeURIComponent(
       finalMessage
     )}`;
-    console.log(finalMessage);
-    console.log(url);
-    // window.open(url, "_blank");
+    window.open(url, "_blank");
   };
 
   const data = {
