@@ -22,7 +22,7 @@ const Navbar = () => {
   const totalLength = cart?.reduce((total, item) => total + item.quantity, 0);
 
   return (
-    <nav className='max-w-full px-8 py-2 flex flex-row justify-between items-center'>
+    <nav className='max-w-full px-8 py-2 flex flex-row justify-between items-center sticky top-0 z-50 bg-base-100'>
       <h1 className='font-bold text-2xl cursor-pointer'>
         <Link to={"/"}>XSTER </Link>
       </h1>

@@ -1,13 +1,13 @@
 import React from "react";
 import Card from "./Card";
-import data from "../data/data";
+import { useCartContext } from "../Context";
 
 const Products = () => {
-  const datas = data;
+  const { dataImages: data } = useCartContext();
 
   return (
     <div className='max-w-full px-4 py-8' id='products-section'>
-      {datas.map((item) => (
+      {data.map((item) => (
         <div key={item[0].category}>
           <h1 className='text-3xl font-bold mb-4'>{item[0].category}</h1>
           <div className='grid sm:grid-cols-3 place-items-center gap-4'>

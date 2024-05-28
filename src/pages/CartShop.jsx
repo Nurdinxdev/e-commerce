@@ -4,7 +4,7 @@ import { useCartContext } from "../Context";
 const CartShop = () => {
   const { cart, addToCart, sendToWhatsapp } = useCartContext();
 
-  const totalPrice = cart.reduce(
+  const totalPrice = cart?.reduce(
     (total, item) => total + item.price * item.quantity,
     0
   );
@@ -17,7 +17,7 @@ const CartShop = () => {
     <div className='max-w-4xl mx-auto px-4 py-8'>
       <h2 className='text-3xl font-bold mb-6'>Shopping Cart</h2>
       <div className='flex flex-col gap-6'>
-        {cart.length > 0 ? (
+        {cart?.length > 0 ? (
           cart.map((product, index) => (
             <div
               key={index}
@@ -67,7 +67,7 @@ const CartShop = () => {
           <p className='text-gray-700'>Your cart is empty.</p>
         )}
       </div>
-      {cart.length > 0 && (
+      {cart?.length > 0 && (
         <div className='total-price flex justify-start items-center gap-4 mt-6'>
           <button
             className='btn btn-primary'
